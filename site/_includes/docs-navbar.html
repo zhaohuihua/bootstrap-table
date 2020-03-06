@@ -15,6 +15,11 @@
           Documentation
         </a>
       </li>
+      <li class="nav-item {% if page.group == "themes" %}active{% endif %}">
+        <a class="nav-link" href="{{ site.baseurl }}/themes">
+          Themes
+        </a>
+      </li>
       <li class="nav-item">
         <a class="nav-link {% if page.title == "Examples" %}active{% endif %}"
           href="https://examples.bootstrap-table.com">
@@ -22,13 +27,22 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ site.baseurl }}/donate">
-          Donate
+        <a class="nav-link"
+          href="https://live.bootstrap-table.com"
+          target="_blank">
+          Online Editor
+        </a>
+      </li>
+      <li class="nav-item {% if page.title == "News" %}active{% endif %}">
+        <a class="nav-link" href="{{ site.baseurl }}/news">
+          News
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ site.baseurl }}/news">
-          News
+        <a class="nav-link"
+          href="https://blog.bootstrap-table.com"
+          target="_blank">
+          Blog
         </a>
       </li>
     </ul>
@@ -37,11 +51,11 @@
   <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
     <li class="nav-item dropdown">
       <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        For Bootstrap v4
+        v{{ site.current_version }}
       </a>
-      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
-        <a class="dropdown-item active" href="{{ site.base_url }}">For Bootstrap v4</a>
-        <a class="dropdown-item" href="http://bootstrap-table-docs3.wenzhixin.net.cn">For Bootstrap v3</a>
+      <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bd-versions">
+        <a class="dropdown-item active" href="/">Latest ({{ site.current_version }})</a>
+        <a class="dropdown-item" href="http://bootstrap-table.com/versions/1.15.5/" target="_blank">v1.15.5</a>
       </div>
     </li>
     <li class="nav-item">

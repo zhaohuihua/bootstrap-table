@@ -5,6 +5,17 @@ SOURCE_BRANCH="master"
 TARGET_BRANCH="gh-pages"
 
 function doCompile {
+    cd site/_themes
+    yarn
+    yarn build
+    mv dist/js ../assets/js/themes
+    cd ../assets/js/themes
+    FILE=../../../_includes/themes.html
+    echo "" > $FILE
+    for f in *.js; do
+        echo "<script src=/assets/js/themes/$f></script>" >> $FILE
+    done
+    cd ../../../../
     bundle exec jekyll build
 }
 
@@ -26,13 +37,16 @@ OUT=_gh_pages
 git clone $REPO $OUT
 cd $OUT
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
-cd ..
 
-# Clean out existing contents
-rm -rf $OUT/**/* || exit 0
+# Clean out existing contents except versions
+mv versions ..
+ls | xargs rm -rf
+cd ..
 
 # Run our compile script
 doCompile
+
+mv versions $OUT
 
 # Now let's go have some fun with the cloned repo
 cd $OUT

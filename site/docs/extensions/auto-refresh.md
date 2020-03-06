@@ -9,13 +9,18 @@ toc: true
 ## Usage
 
 {% highlight html %}
-<link rel="stylesheet" href="extensions/auto-refresh/bootstrap-table-auto-refresh.css">
 <script src="extensions/auto-refresh/bootstrap-table-auto-refresh.js"></script>
 {% endhighlight %}
+
+## Example
+
+[Auto Refresh](https://examples.bootstrap-table.com/#extensions/auto-refresh.html)
 
 ## Options
 
 ### autoRefresh
+
+- **Attribute:** `data-auto-refresh`
 
 - **type:** `Boolean`
 
@@ -25,17 +30,9 @@ toc: true
 
 - **Default:** `false`
 
-### autoRefreshStatus
-
-- **type:** `Boolean`
-
-- **Detail:**
-
-   Set `true` to enable auto refresh. This is the state auto refresh will be in when the table loads. Clicking the button toggles this property. This is simply the default state of auto refresh as the user can always change it by clicking the button.
-
-- **Default:** `true`
-
 ### autoRefreshInterval
+
+- **Attribute:** `data-auto-refresh-interval`
 
 - **type:** `Number`
 
@@ -47,6 +44,8 @@ toc: true
 
 ### autoRefreshSilent
 
+- **Attribute:** `data-auto-refresh-silent`
+
 - **type:** `Boolean`
 
 - **Detail:**
@@ -55,6 +54,26 @@ toc: true
 
 - **Default:** `true`
 
+### autoRefreshStatus
+
+- **Attribute:** `data-auto-refresh-status`
+
+- **type:** `Boolean`
+
+- **Detail:**
+
+   Set `true` to enable auto refresh. This is the state auto refresh will be in when the table loads. Clicking the button toggles this property. This is simply the default state of auto refresh as the user can always change it by clicking the button.
+
+- **Default:** `true`
+
 ### Icons
 
-- autoRefresh: 'glyphicon-time icon-time'
+- autoRefresh: 'fa-clock'
+
+## Localizations
+
+### formatAutoRefresh
+
+- **Parameter:** `undefined`
+
+- **Default:** `'Auto Refresh'`

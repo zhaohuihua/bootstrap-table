@@ -6,7 +6,6 @@ group: extensions
 toc: true
 ---
 
-Use Plugin: [bootstrap-table-resizable](https://github.com/wenzhixin/bootstrap-table/tree/master/src/extensions/resizable) </br>
 Dependence: [jquery-resizable-columns](https://github.com/dobtco/jquery-resizable-columns) v0.2.3
 
 ## Usage
@@ -15,9 +14,15 @@ Dependence: [jquery-resizable-columns](https://github.com/dobtco/jquery-resizabl
 <script src="extensions/resizable/bootstrap-table-resizable.js"></script>
 {% endhighlight %}
 
+## Example
+
+[Resizable](https://examples.bootstrap-table.com/#extensions/resizable.html)
+
 ## Options
 
 ### resizable
+
+- **attribute:** `data-resizable`
 
 - **type:** `Boolean`
 
@@ -29,4 +34,4 @@ Dependence: [jquery-resizable-columns](https://github.com/dobtco/jquery-resizabl
 
 ## Known issues
 
-### This plugin does not work when data-height is set.
+- **This plugin does not work when data-height is set.**

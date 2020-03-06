@@ -6,17 +6,21 @@ group: extensions
 toc: true
 ---
 
-Use Plugin: [bootstrap-table-toolbar](https://github.com/wenzhixin/bootstrap-table/tree/master/src/extensions/toolbar)
-
 ## Usage
 
 {% highlight html %}
 <script src="extensions/toolbar/bootstrap-table-toolbar.js"></script>
 {% endhighlight %}
 
+## Example
+
+[Advanced Toolbar](https://examples.bootstrap-table.com/#extensions/toolbar.html)
+
 ## Options
 
 ### advancedSearch
+
+- **attribute:** `data-advanced-search`
 
 - **type:** `Boolean`
 
@@ -26,17 +30,9 @@ Use Plugin: [bootstrap-table-toolbar](https://github.com/wenzhixin/bootstrap-tab
 
 - **Default:** `false`
 
-### idForm
-
-- **type:** `String`
-
-- **Detail:**
-
-   Must be set to know the idform.
-
-- **Default:** `advancedSearch`
-
 ### actionForm
+
+- **attribute:** `data-action-form`
 
 - **type:** `String`
 
@@ -46,7 +42,21 @@ Use Plugin: [bootstrap-table-toolbar](https://github.com/wenzhixin/bootstrap-tab
 
 - **Default:** `''`
 
+### idForm
+
+- **attribute:** `data-id-form`
+
+- **type:** `String`
+
+- **Detail:**
+
+   Must be set to know the idform.
+
+- **Default:** `advancedSearch`
+
 ### idTable
+
+- **attribute:** `data-id-table`
 
 - **type:** `String`
 
@@ -56,19 +66,15 @@ Use Plugin: [bootstrap-table-toolbar](https://github.com/wenzhixin/bootstrap-tab
 
 - **Default:** `''`
 
+## Events
+
+### onColumnAdvancedSearch(column-advanced-search.bs.table)
+
+* Fired when we are searching into the advanced search form.
+
 ## Locales
 
-### formatAdvancedSearch
-
-
-- **Detail:**
-
-   Title of the advanced search modal
-
-- **Default:** `Advanced search`
-
 ### formatAdvancedCloseButton
-
 
 - **Detail:**
 
@@ -76,8 +82,10 @@ Use Plugin: [bootstrap-table-toolbar](https://github.com/wenzhixin/bootstrap-tab
 
 - **Default:** `Close`
 
-## Events
+### formatAdvancedSearch
 
-### onColumnAdvancedSearch(column-advanced-search.bs.table)
+- **Detail:**
 
-* Fired when we are searching into the advanced search form
+   Title of the advanced search modal
+
+- **Default:** `Advanced search`

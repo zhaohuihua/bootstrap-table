@@ -14,9 +14,15 @@ Adds a button to the toolbar for printing the table in a predefined configurable
 <script src="extensions/print/bootstrap-table-print.js"></script>
 {% endhighlight %}
 
+## Example
+
+[Print](https://examples.bootstrap-table.com/#extensions/print.html)
+
 ## Options
 
 ### showPrint
+
+- **attribute:** `data-show-print`
 
 - **type:** `Boolean`
 
@@ -28,6 +34,8 @@ Adds a button to the toolbar for printing the table in a predefined configurable
 
 ### printAsFilteredAndSortedOnUI
 
+- **attribute:** `data-print-as-filtered-and-sorted-on-ui`
+
 - **type:** `Boolean`
 
 - **Detail:**
@@ -36,7 +44,21 @@ Adds a button to the toolbar for printing the table in a predefined configurable
 
 - **Default:** `true`
 
+### printPageBuilder
+
+- **attribute:** `data-print-page-builder`
+
+- **type:** `Function`
+
+- **Detail:**
+
+   Receive html `<table>` element as string parameter, returns html string for printing. Used for styling and adding header or footer.
+
+- **Default:** `function(table){return printPageBuilderDefault(table)}`
+
 ### printSortColumn
+
+- **attribute:** `data-print-sort-column`
 
 - **type:** `String`
 
@@ -48,6 +70,8 @@ Adds a button to the toolbar for printing the table in a predefined configurable
 
 ### printSortOrder
 
+- **attribute:** `data-print-sort-order`
+
 - **type:** `String`
 
 - **Detail:**
@@ -56,19 +80,15 @@ Adds a button to the toolbar for printing the table in a predefined configurable
 
 - **Default:** `'asc'`
 
-### printPageBuilder
+### Icons
 
-- **type:** `Function`
-
-- **Detail:**
-
-   Receive html `<table>` element as string parameter, returns html string for printing. Used for styling and adding header or footer.
-
-- **Default:** `function(table){return printPageBuilderDefault(table)}`
+* print: `'glyphicon-print icon-share'`
 
 ## Column options
 
 ### printFilter
+
+- **attribute:** `data-print-filter`
 
 - **type:** `String`
 
@@ -78,17 +98,9 @@ Adds a button to the toolbar for printing the table in a predefined configurable
 
 - **Default:** `undefined`
 
-### printIgnore
-
-- **type:** `Boolean`
-
-- **Detail:**
-
-   set true to hide this column in the printed page.
-
-- **Default:** `false`
-
 ### printFormatter
+
+- **attribute:** `data-print-formatter`
 
 - **type:** `Function`
 
@@ -98,6 +110,14 @@ Adds a button to the toolbar for printing the table in a predefined configurable
 
 - **Default:** `undefined`
 
-## Icons
+### printIgnore
 
-* print: `'glyphicon-print icon-share'`
+- **attribute:** `data-print-ignore`
+
+- **type:** `Boolean`
+
+- **Detail:**
+
+   set true to hide this column in the printed page.
+
+- **Default:** `false`

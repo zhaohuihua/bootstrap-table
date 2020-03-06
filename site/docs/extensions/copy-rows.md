@@ -14,44 +14,66 @@ This extension adds functionality for copying selected rows to the clipboard. Cu
 <script src="extensions/copy-rows/bootstrap-table-copy-rows.js"></script>
 {% endhighlight %}
 
+## Example
+
+[Copy Rows](https://examples.bootstrap-table.com/#extensions/copy-rows.html)
+
 ## Options
 
-### copyBtn
+### showCopyRows
+
+- **Attribute:** `data-show-copy-rows`
 
 - **type:** `Boolean`
 
 - **Detail:**
 
-   Set true to show the copy button. This button copys the contents of the selected rows to the clipboard.
+   Set `true` to show the copy button. This button copy the contents of the selected rows to the clipboard.
 
 - **Default:** `false`
 
-### copyWHiddenBtn
+### copyDelimiter
 
-- **type:** `Boolean`
-
-- **Detail:**
-
-   Set true to show the copy with hidden button. This button copys the contents of the selected rows to the clipboard, *including hidden rows*.
-
-- **Default:** `false`
-
-### copyDelemeter
+- **Attribute:** `data-copy-delimiter`
 
 - **type:** `String`
 
 - **Detail:**
 
-   This string will be inserted in-between the column values when copying
+   This delimiter will be inserted in-between the column values when copying.
 
-- **Default:** `''`
+- **Default:** `', '`
+
+### copyNewline
+
+- **Attribute:** `data-copy-newline`
+
+- **type:** `String`
+
+- **Detail:**
+
+   This newline will be inserted in-between the row values when copying.
+
+- **Default:** `'\n'`
+
+### copyWithHidden
+
+- **Attribute:** `data-copy-width-hidden`
+
+- **type:** `Boolean`
+
+- **Detail:**
+
+   Set `true` to copy with hidden columns.
+
+- **Default:** `false`
+
+### Icons
+
+- copy: 'fa-copy'
 
 ## Methods
 
 ### copyColumnsToClipboard
 
-* copys the contents of the selected rows to the clipboard.
-
-### copyColumnsToClipboardWithHidden
-
-* copys the contents of the selected rows to the clipboard, **including hidden rows**.
+* Copy the contents of the selected rows to the clipboard.

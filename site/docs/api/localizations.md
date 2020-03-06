@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Localizations
-description: The Methods API of Bootstrap Table.
+description: The Localizations API of Bootstrap Table.
 group: api
 toc: true
 ---
@@ -38,53 +38,26 @@ $('#table').bootstrapTable({
 })
 {% endhighlight %}
 
-## formatLoadingMessage
+You can custom the format localizations, the calling syntax:
+
+{% highlight javascript %}
+$('#table').bootstrapTable({
+  formatName: function () {
+    return 'Format message'
+  }
+})
+{% endhighlight %}
+
+## formatAllRows
 
 - **Parameter:** `undefined`
 
-- **Default:** `'Loading, please wait…'`
-
-## formatRecordsPerPage
-
-- **Parameter:** `pageNumber`
-
-- **Default:** `'%s records per page'`
-
-## formatShowingRows
-
-- **Parameter:** `pageFrom, pageTo, totalRows`
-
-- **Default:** `'Showing %s to %s of %s rows'`
-
-## formatDetailPagination
-
-- **Parameter:** `totalRows`
-
-- **Default:** `'Showing %s rows'`
-
-## formatSearch
+- **Default:** `'All'`
+## formatClearSearch
 
 - **Parameter:** `undefined`
 
-- **Default:** `'Search'`
-
-## formatNoMatches
-
-- **Parameter:** `undefined`
-
-- **Default:** `'No matching records found'`
-
-## formatRefresh
-
-- **Parameter:** `undefined`
-
-- **Default:** `'Refresh'`
-
-## formatToggle
-
-- **Parameter:** `undefined`
-
-- **Default:** `'Toggle'`
+- **Default:** `'Clear Search'`
 
 ## formatColumns
 
@@ -92,14 +65,111 @@ $('#table').bootstrapTable({
 
 - **Default:** `'Columns'`
 
-## formatAllRows
+## formatColumnsToggleAll
 
 - **Parameter:** `undefined`
 
-- **Default:** `'All'`
+- **Default:** `'Toggle all'`
+
+## formatDetailPagination
+
+- **Parameter:** `totalRows`
+
+- **Default:** `'Showing %s rows'`
 
 ## formatFullscreen
 
 - **Parameter:** `undefined`
 
 - **Default:** `'Fullscreen'`
+
+## formatLoadingMessage
+
+- **Parameter:** `undefined`
+
+- **Default:** `'Loading, please wait…'`
+
+## formatNoMatches
+
+- **Parameter:** `undefined`
+
+- **Default:** `'No matching records found'`
+
+## formatPaginationSwitch
+
+- **Parameter:** `undefined`
+
+- **Default:** `'Hide/Show pagination'`
+
+## formatPaginationSwitchDown
+
+- **Parameter:** `undefined`
+
+- **Default:** `'Show pagination'`
+
+## formatPaginationSwitchUp
+
+- **Parameter:** `undefined`
+
+- **Default:** `'Hide pagination'`
+
+## formatRecordsPerPage
+
+- **Parameter:** `pageNumber`
+
+- **Default:** `'%s records per page'`
+
+## formatRefresh
+
+- **Parameter:** `undefined`
+
+- **Default:** `'Refresh'`
+
+## formatSRPaginationNextText
+
+- **Parameter:** `undefined`
+
+- **Default:** `'next page'`
+
+## formatSRPaginationPageText
+
+- **Parameter:** `page`
+
+- **Default:** `'to page %s`
+
+## formatSRPaginationPreText
+
+- **Parameter:** `undefined`
+
+- **Default:** `'previous page'`
+
+## formatSearch
+
+- **Parameter:** `undefined`
+
+- **Default:** `'Search'`
+
+## formatShowingRows
+
+- **Parameter:** `pageFrom, pageTo, totalRows`
+
+- **Default:** `'Showing %s to %s of %s rows'`
+
+## formatToggle
+
+- **Parameter:** `undefined`
+
+- **Default:** `'Toggle'`
+
+## formatToggleOff
+
+- **Parameter:** `undefined`
+
+- **Default:** `'Hide card view'`
+
+## formatToggleOn
+
+- **Parameter:** `undefined`
+
+- **Default:** `'Show card view'`
+

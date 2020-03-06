@@ -1,92 +1,93 @@
 /**
  * Bootstrap Table French (France) translation
  * Author: Dennis Hernández (http://djhvscf.github.io/Blog/)
- * Modification: Tidalf (https://github.com/TidalfFR)
+ *         Tidalf (https://github.com/TidalfFR)
+ *         Nevets82 <Nevets82@gmail.com>
  */
-($ => {
-  $.fn.bootstrapTable.locales['fr-FR'] = {
-    formatLoadingMessage () {
-      return 'Chargement en cours, patientez, s´il vous plaît ...'
-    },
-    formatRecordsPerPage (pageNumber) {
-      return `${pageNumber} lignes par page`
-    },
-    formatShowingRows (pageFrom, pageTo, totalRows) {
-      return `Affichage des lignes ${pageFrom} à ${pageTo} sur ${totalRows} lignes au total`
-    },
-    formatSearch () {
-      return 'Rechercher'
-    },
-    formatNoMatches () {
-      return 'Aucun résultat trouvé'
-    },
-    formatPaginationSwitch () {
-      return 'Montrer/Masquer pagination'
-    },
-    formatRefresh () {
-      return 'Rafraîchir'
-    },
-    formatToggle () {
-      return 'Alterner'
-    },
-    formatColumns () {
-      return 'Colonnes'
-    },
-    formatAllRows () {
-      return 'Tous'
-    },
-    formatExport () {
-      return 'Exporter les données'
-    },
-    formatClearFilters () {
-      return 'Vider les filtres'
-    },
-    formatMultipleSort () {
-      return 'Tri avancé'
-    },
-    formatAddLevel () {
-      return 'Ajouter un niveau'
-    },
-    formatDeleteLevel () {
-      return 'Supprimer un niveau'
-    },
-    formatColumn () {
-      return 'Colonne'
-    },
-    formatOrder () {
-      return 'Ordre'
-    },
-    formatSortBy () {
-      return 'Trier par'
-    },
-    formatThenBy () {
-      return 'Puis par'
-    },
-    formatSort () {
-      return 'Trier'
-    },
-    formatCancel () {
-      return 'Annuler'
-    },
-    formatDuplicateAlertTitle () {
-      return 'Doublon(s) détecté(s)!'
-    },
-    formatDuplicateAlertDescription () {
-      return 'Supprimez ou changez les colonnes dupliquées.'
-    },
-    formatSortOrders () {
-      return {
-        asc: 'Croissant',
-        desc: 'Décroissant'
-      }
-    },
-    formatAdvancedSearch () {
-      return 'Recherche avancée'
-    },
-    formatAdvancedCloseButton () {
-      return 'Fermer'
-    }
-  }
 
-  $.extend($.fn.bootstrapTable.defaults, $.fn.bootstrapTable.locales['fr-FR'])
-})(jQuery)
+$.fn.bootstrapTable.locales['fr-FR'] = {
+  formatLoadingMessage () {
+    return 'Chargement en cours'
+  },
+  formatRecordsPerPage (pageNumber) {
+    return `${pageNumber} lignes par page`
+  },
+  formatShowingRows (pageFrom, pageTo, totalRows, totalNotFiltered) {
+    if (totalNotFiltered !== undefined && totalNotFiltered > 0 && totalNotFiltered > totalRows) {
+      return `Affiche de ${pageFrom} à ${pageTo} sur ${totalRows} lignes (filtrés à partir de ${totalNotFiltered} lignes)`
+    }
+
+    return `Affiche de ${pageFrom} à ${pageTo} sur ${totalRows} lignes`
+  },
+  formatSRPaginationPreText () {
+    return 'page précédente'
+  },
+  formatSRPaginationPageText (page) {
+    return `vers la page ${page}`
+  },
+  formatSRPaginationNextText () {
+    return 'page suivante'
+  },
+  formatDetailPagination (totalRows) {
+    return `Affiche ${totalRows} lignes`
+  },
+  formatClearSearch () {
+    return 'Effacer la recherche'
+  },
+  formatSearch () {
+    return 'Recherche'
+  },
+  formatNoMatches () {
+    return 'Aucun résultat'
+  },
+  formatPaginationSwitch () {
+    return 'Cacher/Afficher pagination'
+  },
+  formatPaginationSwitchDown () {
+    return 'Afficher pagination'
+  },
+  formatPaginationSwitchUp () {
+    return 'Cacher pagination'
+  },
+  formatRefresh () {
+    return 'Rafraichir'
+  },
+  formatToggle () {
+    return 'Basculer'
+  },
+  formatToggleOn () {
+    return 'Afficher vue carte'
+  },
+  formatToggleOff () {
+    return 'Cacher vue carte'
+  },
+  formatColumns () {
+    return 'Colonnes'
+  },
+  formatColumnsToggleAll () {
+    return 'Tout basculer'
+  },
+  formatFullscreen () {
+    return 'Plein écran'
+  },
+  formatAllRows () {
+    return 'Tout'
+  },
+  formatAutoRefresh () {
+    return 'Rafraîchissement automatique'
+  },
+  formatExport () {
+    return 'Exporter les données'
+  },
+  formatJumpTo () {
+    return 'Aller à'
+  },
+  formatAdvancedSearch () {
+    return 'Recherche avancée'
+  },
+  formatAdvancedCloseButton () {
+    return 'Fermer'
+  }
+}
+
+$.extend($.fn.bootstrapTable.defaults, $.fn.bootstrapTable.locales['fr-FR'])

@@ -6,18 +6,22 @@ group: extensions
 toc: true
 ---
 
-Use Plugin: [bootstrap-table-group-by-v2](https://github.com/wenzhixin/bootstrap-table/tree/master/src/extensions/group-by-v2) </br>
-You must include the bootstrap-table-group-by.css file in order to get the appropriate style
-
 ## Usage
 
 {% highlight html %}
+<link rel="stylesheet" src="extensions/group-by-v2/bootstrap-table-group-by.css">
 <script src="extensions/group-by-v2/bootstrap-table-group-by.js"></script>
 {% endhighlight %}
+
+## Example
+
+[Group By v2](https://examples.bootstrap-table.com/#extensions/group-by-v2.html)
 
 ## Options
 
 ### groupBy
+
+- **attribute:** `data-group-by`
 
 - **type:** `Boolean`
 
@@ -29,15 +33,21 @@ You must include the bootstrap-table-group-by.css file in order to get the appro
 
 ### groupByField
 
-- **type:** `String`
+- **attribute:** `data-group-by-field`
+
+- **type:** `String|Array`
 
 - **Detail:**
 
-   Set the fields name that you want to group the data.
+   Set the field name(s) that you want to group the data.  
+   For a single field use a `String` e.g. `shape`.   
+   For a multiple fields use a `Array` e.g. `["shape", "color"]`.   
 
 - **Default:** `''`
 
 ### groupByFormatter
+
+- **attribute:** `data-group-by-formatter`
 
 - **type:** `Function`
 

@@ -6,24 +6,27 @@ group: extensions
 toc: true
 ---
 
-Use Plugin: [bootstrap-table-key-events](https://github.com/wenzhixin/bootstrap-table/tree/master/src/extensions/key-events)
-
 ## Usage
 
 {% highlight html %}
 <script src="extensions/key-events/bootstrap-table-key-events.js"></script>
 {% endhighlight %}
 
+## Example
+
+[Key Events](https://examples.bootstrap-table.com/#extensions/key-events.html)
+
 ## Options
 
 ### keyEvents
+
+- **attribute:** `data-key-events`
 
 - **type:** `Boolean`
 
 - **Detail:**
 
-
-True to enable the key events. The key event list is:
+  True to enable the key events. The key event list is:
     * s: It will be focused the search textbox if it is enabled.
     * r: It will refresh the table if the showRefresh option is enabled.
     * t: It will toggle the table view if the showToggle option is enabled.

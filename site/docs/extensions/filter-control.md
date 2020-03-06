@@ -6,8 +6,6 @@ group: extensions
 toc: true
 ---
 
-Use Plugin: [bootstrap-table-filter-control](https://github.com/wenzhixin/bootstrap-table/tree/master/src/extensions/filter-control)
-
 Dependence if you use the datepicker option: [bootstrap-datepicker](https://github.com/eternicode/bootstrap-datepicker) v1.4.0
 
 ## Usage
@@ -17,9 +15,15 @@ Dependence if you use the datepicker option: [bootstrap-datepicker](https://gith
 <script src="extensions/filter-control/bootstrap-table-filter-control.js"></script>
 {% endhighlight %}
 
+## Example
+
+[Filter Control](https://examples.bootstrap-table.com/#extensions/filter-control.html)
+
 ## Options
 
 ### filterControl
+
+- **Attribute:** `data-filter-control`
 
 - **type:** `Boolean`
 
@@ -29,17 +33,9 @@ Dependence if you use the datepicker option: [bootstrap-datepicker](https://gith
 
 - **Default:** `false`
 
-### filterShowClear
-
-- **type:** `Boolean`
-
-- **Detail:**
-
-   Set true to add a button to clear all the controls added by this plugin.
-
-- **Default:** `false`
-
 ### alignmentSelectControlOptions
+
+- **Attribute:** `data-alignment-select-control-options`
 
 - **type:** `String`
 
@@ -49,17 +45,9 @@ Dependence if you use the datepicker option: [bootstrap-datepicker](https://gith
 
 - **Default:** `undefined`
 
-### hideUnusedSelectOptions
-
-- **type:** `Boolean`
-
-- **Detail:**
-
-   Set to true in order to hide the options that are not in the table. This option does not work on server-side pagination.
-
-- **Default:** `false`
-
 ### disableControlWhenSearch
+
+- **Attribute:** `data-disable-control-when-search`
 
 - **type:** `Boolean`
 
@@ -69,7 +57,46 @@ Dependence if you use the datepicker option: [bootstrap-datepicker](https://gith
 
 - **Default:** `false`
 
+### filterControlContainer
+
+- **Attribute:** `data-filter-control-container`
+
+- **type:** `Selector`
+
+- **Detail:**
+
+   Set to e.g. `#filter` to allow custom input filter in a element with the id `filter`.
+   Each filter element (input or select) must have the following id `bootstrap-table-filter-control-<Fieldname>` (<Fieldname> must be replaced with the defined [Field](https://bootstrap-table.com/docs/api/column-options/#field) name).
+
+- **Default:** `false`
+
+### filterDataCollector
+
+- **Attribute:** `data-filter-data-collector`
+
+- **type:** `Function`
+
+- **Detail:**
+
+   Collect data which will added to the select filter, to filter through e.g. labels which are comma separated and displayed with a formatter.
+
+- **Default:** `undefined`
+
+### hideUnusedSelectOptions
+
+- **Attribute:** `data-hide-unused-select-options`
+
+- **type:** `Boolean`
+
+- **Detail:**
+
+   Set to true in order to hide the options that are not in the table. This option does not work on server-side pagination.
+
+- **Default:** `false`
+
 ### searchOnEnterKey
+
+- **Attribute:** `data-search-on-enter-key`
 
 - **type:** `Boolean`
 
@@ -83,6 +110,8 @@ Dependence if you use the datepicker option: [bootstrap-datepicker](https://gith
 
 ### filterControl
 
+- **Attribute:** `data-filter-control`
+
 - **type:** `String`
 
 - **Detail:**
@@ -91,44 +120,10 @@ Dependence if you use the datepicker option: [bootstrap-datepicker](https://gith
 
 - **Default:** `undefined`
 
-### filterData
-
-- **type:** `String`
-
-- **Detail:**
-
-   Set custom select filter values, use `var:variable` to load from a variable or `url:http://www.example.com/data.json` to load from a remote json file or `json:{key:data}` to load from a json string.
-
-- **Default:** `undefined`
-
-### filterDatepickerOptions
-- **type:** `Object`
-
-- **Detail:**
-
-   If the datepicker option is set use this option to configure the datepicker with the native options. Use this way: `data-filter-datepicker-options='{"autoclose":true, "clearBtn": true, "todayHighlight": true}'`.
-
-- **Default:** `undefined`
-
-### filterStrictSearch
-- **type:** `Boolean`
-
-- **Detail:**
-
-   Set to true if you want to use the strict search mode.
-
-- **Default:** `false`
-
-### filterStartsWithSearch
-- **type:** `Boolean`
-
-- **Detail:**
-
-   Set to true if you want to use the starts with search mode.
-
-- **Default:** `false`
-
 ### filterControlPlaceholder
+
+- **attribute:** `data-filter-control-placeholder`
+
 - **type:** `String`
 
 - **Detail:**
@@ -137,15 +132,107 @@ Dependence if you use the datepicker option: [bootstrap-datepicker](https://gith
 
 - **Default:** `''`
 
+### filterCustomSearch
+
+- **Attribute:** `data-filter-custom-search`
+
+- **type:** `function`
+
+- **Detail:**
+
+   The custom search function is executed instead of built-in search function, takes four parameters:
+
+     * `text`: the search text.
+     * `value`: the the value of the column to compare.
+     * `field`: the column field name.
+     * `data`: the table data.
+
+   Return `false` to filter out the current column/row.
+   Return `true` to not filter out the current column/row.
+   Return `null` to skip the custom search for the current value.
+
+- **Default:** `undefined`
+
+### filterData
+
+- **Attribute:** `data-filter-data`
+
+- **type:** `String`
+
+- **Detail:**
+
+   Set custom select filter values, use
+   `var:variable` to load from a variable
+   `obj:variable.key` to load from a object
+   `url:http://www.example.com/data.json` to load from a remote json file
+   `json:{key:data}` to load from a json string.
+   `func:functionName` to load from a function.
+
+- **Default:** `undefined`
+
+### filterDatepickerOptions
+
+- **Attribute:** `data-filter-datepicker-options`
+
+- **type:** `Object`
+
+- **Detail:**
+
+   If the datepicker option is set use this option to configure the datepicker with the native options. Use this way: `data-filter-datepicker-options='{"autoclose":true, "clearBtn": true, "todayHighlight": true}'`.
+
+- **Default:** `undefined`
+
+### filterDefault
+
+- **Attribute:** `data-filter-default`
+
+- **type:** `String`
+
+- **Detail:**
+
+   Set the default value of the filter.
+
+- **Default:** `undefined`
+
+### filterOrderBy
+
+- **attribute:** `data-filter-order-by`
+
+- **type:** `String`
+
+- **Detail:**
+
+   Set this to order the options in a select control whether ascending or descending.
+
+- **Default:** `'asc'`
+
+### filterStartsWithSearch
+
+- **attribute:** `data-filter-starts-with-search`
+
+- **type:** `Boolean`
+
+- **Detail:**
+
+   Set to true if you want to use the starts with search mode.
+
+- **Default:** `false`
+
+### filterStrictSearch
+
+- **Attribute:** `data-filter-strict-search`
+
+- **type:** `Boolean`
+
+- **Detail:**
+
+   Set to true if you want to use the strict search mode.
+
+- **Default:** `false`
+
 ### Icons
+
 * clear: 'glyphicon-trash icon-clear'
-
-## Locale
-
-### formatClearFilters
-- **type:** `Function`
-
-- **Default:** `function () { return "Clear Filters";}`
 
 ## Events
 
@@ -162,3 +249,15 @@ Dependence if you use the datepicker option: [bootstrap-datepicker](https://gith
 ### triggerSearch
 
 * Trigger manually the search action
+
+### clearFilterControl
+
+* Clear all the controls added by this plugin (similar to showSearchClearButton option).
+
+## Locale
+
+### formatClearFilters
+
+- **type:** `Function`
+
+- **Default:** `function () { return "Clear Filters";}`

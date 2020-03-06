@@ -2,69 +2,90 @@
  * Bootstrap Table Russian translation
  * Author: Dunaevsky Maxim <dunmaksim@yandex.ru>
  */
-($ => {
-  $.fn.bootstrapTable.locales['ru-RU'] = {
-    formatLoadingMessage () {
-      return 'Пожалуйста, подождите, идёт загрузка...'
-    },
-    formatRecordsPerPage (pageNumber) {
-      return `${pageNumber} записей на страницу`
-    },
-    formatShowingRows (pageFrom, pageTo, totalRows) {
-      return `Записи с ${pageFrom} по ${pageTo} из ${totalRows}`
-    },
-    formatSearch () {
-      return 'Поиск'
-    },
-    formatNoMatches () {
-      return 'Ничего не найдено'
-    },
-    formatRefresh () {
-      return 'Обновить'
-    },
-    formatToggle () {
-      return 'Переключить'
-    },
-    formatColumns () {
-      return 'Колонки'
-    },
-    formatClearFilters () {
-      return 'Очистить фильтры'
-    },
-    formatMultipleSort () {
-      return 'Множественная сортировка'
-    },
-    formatAddLevel () {
-      return 'Добавить уровень'
-    },
-    formatDeleteLevel () {
-      return 'Удалить уровень'
-    },
-    formatColumn () {
-      return 'Колонка'
-    },
-    formatOrder () {
-      return 'Порядок'
-    },
-    formatSortBy () {
-      return 'Сортировать по'
-    },
-    formatThenBy () {
-      return 'затем по'
-    },
-    formatSort () {
-      return 'Сортировать'
-    },
-    formatCancel () {
-      return 'Отмена'
-    },
-    formatDuplicateAlertTitle () {
-      return 'Дублирование колонок!'
-    },
-    formatDuplicateAlertDescription () {
-      return 'Удалите, пожалуйста, дублирующую колонку, или замените ее на другую.'
-    }
-  }
 
-  $.extend($.fn.bootstrapTable.defaults, $.fn.bootstrapTable.locales['ru-RU'])
-})(jQuery)
+$.fn.bootstrapTable.locales['ru-RU'] = {
+  formatLoadingMessage () {
+    return 'Пожалуйста, подождите, идёт загрузка'
+  },
+  formatRecordsPerPage (pageNumber) {
+    return `${pageNumber} записей на страницу`
+  },
+  formatShowingRows (pageFrom, pageTo, totalRows, totalNotFiltered) {
+    if (totalNotFiltered !== undefined && totalNotFiltered > 0 && totalNotFiltered > totalRows) {
+      return `Записи с ${pageFrom} по ${pageTo} из ${totalRows} (filtered from ${totalNotFiltered} total rows)`
+    }
+
+    return `Записи с ${pageFrom} по ${pageTo} из ${totalRows}`
+  },
+  formatSRPaginationPreText () {
+    return 'previous page'
+  },
+  formatSRPaginationPageText (page) {
+    return `to page ${page}`
+  },
+  formatSRPaginationNextText () {
+    return 'next page'
+  },
+  formatDetailPagination (totalRows) {
+    return `Showing ${totalRows} rows`
+  },
+  formatClearSearch () {
+    return 'Очистить фильтры'
+  },
+  formatSearch () {
+    return 'Поиск'
+  },
+  formatNoMatches () {
+    return 'Ничего не найдено'
+  },
+  formatPaginationSwitch () {
+    return 'Hide/Show pagination'
+  },
+  formatPaginationSwitchDown () {
+    return 'Show pagination'
+  },
+  formatPaginationSwitchUp () {
+    return 'Hide pagination'
+  },
+  formatRefresh () {
+    return 'Обновить'
+  },
+  formatToggle () {
+    return 'Переключить'
+  },
+  formatToggleOn () {
+    return 'Show card view'
+  },
+  formatToggleOff () {
+    return 'Hide card view'
+  },
+  formatColumns () {
+    return 'Колонки'
+  },
+  formatColumnsToggleAll () {
+    return 'Toggle all'
+  },
+  formatFullscreen () {
+    return 'Fullscreen'
+  },
+  formatAllRows () {
+    return 'All'
+  },
+  formatAutoRefresh () {
+    return 'Auto Refresh'
+  },
+  formatExport () {
+    return 'Export data'
+  },
+  formatJumpTo () {
+    return 'GO'
+  },
+  formatAdvancedSearch () {
+    return 'Advanced search'
+  },
+  formatAdvancedCloseButton () {
+    return 'Close'
+  }
+}
+
+$.extend($.fn.bootstrapTable.defaults, $.fn.bootstrapTable.locales['ru-RU'])

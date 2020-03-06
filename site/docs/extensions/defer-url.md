@@ -12,9 +12,15 @@ toc: true
 <script src="extensions/defer-url/bootstrap-table-defer-url.js"></script>
 {% endhighlight %}
 
+## Example
+
+[Defer URL](https://examples.bootstrap-table.com/#extensions/defer-url.html)
+
 ## Options
 
 ### deferUrl
+
+- **Attribute:** `data-defer-url`
 
 - **type:** `String`
 

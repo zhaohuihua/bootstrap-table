@@ -6,22 +6,27 @@ group: extensions
 toc: true
 ---
 
-Use Plugin: [bootstrap-table-reorder-rows](https://github.com/wenzhixin/bootstrap-table/tree/master/src/extensions/reorder-rows) </br>
-Dependence: [tablednd](https://github.com/isocra/TableDnD) v0.9, </br>
-if you want you can include the bootstrap-table-reorder-rows.css file to use the default dragClass
+Dependence: [tablednd](https://github.com/isocra/TableDnD) v0.9
 
+if you want you can include the bootstrap-table-reorder-rows.css file to use the default dragClass.
 
 ## Usage
 
 {% highlight html %}
-<link rel="stylesheet" href=".../bootstrap-table-reorder-rows.css">
+<link rel="stylesheet" href="extensions/reorder-rows/bootstrap-table-reorder-rows.css">
 <script src=".../jquery.tablednd.js"></script>
 <script src="extensions/reorder-rows/bootstrap-table-reorder-rows.js"></script>
 {% endhighlight %}
 
+## Example
+
+[Reorder Rows](https://examples.bootstrap-table.com/#extensions/reorder-rows.html)
+
 ## Options
 
 ### reorderableRows
+
+- **attribute:** `data-reorderable-rows`
 
 - **type:** `Boolean`
 
@@ -33,25 +38,19 @@ if you want you can include the bootstrap-table-reorder-rows.css file to use the
 
 ### onDragStyle
 
-- **type:** `String`
-
-- **Detail:**
-
-   This is the style that is assigned to the row during drag. There are limitations to the styles that can be associated with a row (such as you can't assign a border�well you can, but it won't be displayed).
-
-- **Default:** `null`
-
-### onDropStyle
+- **attribute:** `data-on-drag-style`
 
 - **type:** `String`
 
 - **Detail:**
 
-   This is the style that is assigned to the row when it is dropped. As for onDragStyle, there are limitations to what you can do. Also this replaces the original style, so again consider using onDragClass which is simply added and then removed on drop.
+   This is the style that is assigned to the row during drag. There are limitations to the styles that can be associated with a row (such as you can't assign a border well you can, but it won't be displayed).
 
 - **Default:** `null`
 
 ### onDragClass
+
+- **attribute:** `data-on-drag-class`
 
 - **type:** `String`
 
@@ -61,7 +60,45 @@ if you want you can include the bootstrap-table-reorder-rows.css file to use the
 
 - **Default:** `reorder_rows_onDragClass`
 
+### onDropStyle
+
+- **attribute:** `data-on-drop-style`
+
+- **type:** `String`
+
+- **Detail:**
+
+   This is the style that is assigned to the row when it is dropped. As for onDragStyle, there are limitations to what you can do. Also this replaces the original style, so again consider using onDragClass which is simply added and then removed on drop.
+
+- **Default:** `null`
+
+### onReorderRowsDrag
+
+- **attribute:** `data-on-reorder-rows-drag`
+
+- **type:** `Function`
+
+- **Detail:**
+
+   Pass a function that will be called when the user starts dragging. The function takes 1 parameter: the row which the user has started to drag.
+
+- **Default:** `empty function`
+
+### onReorderRowsDrop
+
+- **attribute:** `data-on-reorder-rows-drop`
+
+- **type:** `Function`
+
+- **Detail:**
+
+   Pass a function that will be called when the row is dropped. The function takes 1 parameter:  the row that was dropped.
+
+- **Default:** `empty function`
+
 ### dragHandle
+
+- **attribute:** `data-drag-handle`
 
 - **type:** `String`
 
@@ -69,9 +106,11 @@ if you want you can include the bootstrap-table-reorder-rows.css file to use the
 
    This is the cursor to use
 
-- **Default:** `null`
+- **Default:** `>tbody>tr>td`
 
 ### useRowAttrFunc
+
+- **attribute:** `data-use-row-attr-func`
 
 - **type:** `Boolean`
 
@@ -81,32 +120,8 @@ if you want you can include the bootstrap-table-reorder-rows.css file to use the
 
 - **Default:** `false`
 
-### onReorderRowsDrag
-
-- **type:** `Function`
-
-- **Detail:**
-
-   Pass a function that will be called when the user starts dragging. The function takes 2 parameters: the table and the row which the user has started to drag.
-
-- **Default:** `empty function`
-
-### onReorderRowsDrop
-
-- **type:** `Function`
-
-- **Detail:**
-
-   Pass a function that will be called when the row is dropped. The function takes 2 parameters: the table and the row that was dropped.
-
-- **Default:** `empty function`
-
 ## Events
 
 ### onReorderRow(reorder-row.bs.table)
 
-Fired when the row was dropped, receive as parameter the new data order
-
-## The existing problems
-
-* After search if the user reorder the rows the data is not shown properly after that.
+Fired when the row was dropped, receive as parameter the new data order.

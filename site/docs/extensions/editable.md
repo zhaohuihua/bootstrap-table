@@ -18,6 +18,8 @@ Use Plugin: [x-editable](https://github.com/vitalets/x-editable)
 
 ### editable
 
+- **Attribute:** `data-editable`
+
 - **type:** `Boolean`
 
 - **Detail:**
@@ -28,7 +30,21 @@ Use Plugin: [x-editable](https://github.com/vitalets/x-editable)
 
 ## Column options
 
+### alwaysUseFormatter
+
+- **Attribute:** `data-always-use-formatter`
+
+- **type:** `Boolean`
+
+- **Detail:**
+    
+    Set `true` to use always the formatter, even if the column was already edited.
+
+- **Default:** `false`
+
 ### editable
+
+- **Attribute:** `data-editable`
 
 - **type:** `Object | Function`
 
@@ -57,6 +73,21 @@ Use Plugin: [x-editable](https://github.com/vitalets/x-editable)
   </table>
   {% endhighlight %}
 
+  You can use `noeditFormatter` to disable the editable column, for example:
+
+  {% highlight javascript %}
+  {
+    editable: {
+      noeditFormatter (value, row, index) {
+        if (value === 'noedit') {
+          return true
+        }
+        return false
+      }
+    }
+  }
+  {% endhighlight %}
+
 - **Default:** `undefined`
 
 ## Events
@@ -69,7 +100,7 @@ Fired when all columns was initialized by `$().editable()` method.
 
 Fired when an editable cell is saved.
 
-parameters: field, row, oldValue, $el
+parameters: field, row, rowIndex, oldValue, $el
 
 ### onEditableShown(editable-shown.bs.table)
 

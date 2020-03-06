@@ -48,7 +48,7 @@ module.exports = {
     'no-multi-spaces': 'error',
     'valid-jsdoc': 'warn',
     'eqeqeq': 'error',
-    'guard-for-in': 'warn',
+    'guard-for-in': 'off',
     'no-multi-str': 'error',
     'no-return-await': 'error',
     'no-return-assign': 'error',
@@ -64,7 +64,8 @@ module.exports = {
     'no-useless-constructor': 'warn',
     'comma-dangle': ['error', 'never'],
     'no-param-reassign': 'off',
-    "space-before-function-paren": ["error", "always"]
+    'space-before-function-paren': ["error", "always"],
+    'no-prototype-builtins': 'off'
   },
   'globals': {
     '$': true,

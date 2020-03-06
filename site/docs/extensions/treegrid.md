@@ -6,7 +6,7 @@ group: extensions
 toc: true
 ---
 
-Use Plugin: [bootstrap-table-treegrid](https://github.com/wenzhixin/bootstrap-table/tree/master/src/extensions/treegrid)
+Dependence: [jquery-treegrid](https://github.com/maxazan/jquery-treegrid) v0.3.0
 
 ## Usage
 
@@ -14,44 +14,68 @@ Use Plugin: [bootstrap-table-treegrid](https://github.com/wenzhixin/bootstrap-ta
 <script src="extensions/treegrid/bootstrap-table-treegrid.js"></script>
 {% endhighlight %}
 
+## Example
+
+[Treegrid](https://examples.bootstrap-table.com/#extensions/treegrid.html)
+
 ## Options
+
+### treeEnable
+
+- **attribute:** `data-tree-enable`
+
+- **type:** `Boolean`
+
+- **Detail:**
+
+   Set `true` to enable the tree grid.
+
+- **Default:** `false`
 
 ### idField
 
+- **attribute:** `data-id-field`
+
 - **type:** `String`
 
 - **Detail:**
 
-   overwrite the default idField to `'id'`
+   Overwrite the default idField to `'id'`.
 
 - **Default:** `'id'`
 
-### treeShowField
-
-- **type:** `String`
-
-- **Detail:**
-
-
-
-- **Default:** `''`
-
 ### parentIdField
 
+- **attribute:** `data-parent-id-field`
+
 - **type:** `String`
 
 - **Detail:**
 
-
+  Set the parent id field.
 
 - **Default:** `'pid'`
 
-### rootParentId
+### treeShowField
+
+- **attribute:** `data-tree-show-field`
 
 - **type:** `String`
 
 - **Detail:**
 
+  Set the `treeShowField` will auto enable the tree grid.
 
+- **Default:** `''`
+
+### rootParentId
+
+- **attribute:** `data-root-parent-id`
+
+- **type:** `String`
+
+- **Detail:**
+
+  Set the root parent id.
 
 - **Default:** `null`

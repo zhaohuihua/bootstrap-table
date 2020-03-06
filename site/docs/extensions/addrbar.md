@@ -22,6 +22,8 @@ Every time when changing page, sorting and searching operation, it will change t
 
 ### addrbar
 
+- **Attribute:** `data-addrbar`
+
 - **Type:** `Boolean`
 
 - **Detail:**
@@ -31,6 +33,8 @@ Every time when changing page, sorting and searching operation, it will change t
 - **Default:** `false`
 
 ### addrPrefix
+
+- **Attribute:** `data-addr-prefix`
 
 - **Type:** `String`
 
@@ -43,7 +47,7 @@ Every time when changing page, sorting and searching operation, it will change t
   There are 5 parameters in default. They are
 
   * `page`: page number
-  * `limit`: page size
+  * `size`: page size
   * `order`: asc/dsc
   * `sort`: the sort keyword
   * `search`: search keyword
@@ -54,8 +58,4 @@ Every time when changing page, sorting and searching operation, it will change t
 
 ## Note
 
-* Can not use in client pagination.
-
-* The example page doesn't handle the sort and search operation, you need do it yourself.
-
-* While search field appeared, the page number will return to 1 when refresh, you can read [同时设置pageNumber和searchText初始值会冲突](https://github.com/wenzhixin/bootstrap-table/issues/2580).
+* Only support server side pagination.
